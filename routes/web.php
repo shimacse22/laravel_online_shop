@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\BkashPaymentController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -30,7 +30,6 @@ Route::get('/dashboard', function () {
   return view('dashboard');
     
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 //Admin All Route
 
@@ -169,9 +168,6 @@ Route::group(['middleware'=>'auth'],function(){
 
 });
 
-//All home route
-//Without Login
-
     Route::get('/',[HomeController::class,'index'] )->name('front.home');
     Route::get('/shop/{categorySlug?}/{subCategorySlug?}',[ShopController::class,'index'] )->name('front.shop');
     Route::get('/product/{slug}',[ShopController::class,'product'] )->name('front.product');
@@ -214,7 +210,6 @@ Route::get('getSlug',function(Request $request){
 // Payment gateway route
 
 Route::get('/payment-gateway',[CartController::class,'paymentGateway'] )->name('payment.gateway');
-Route::post('/update-aamarpay',[CartController::class,'updateAamarpay'] )->name('update.aamarpay');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
