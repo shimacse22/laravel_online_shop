@@ -58,16 +58,25 @@ php artisan serve
 
 📸 Screenshots
 ### 🛠 Admin Panel
-![Admin Panel](screenshots/admin_dashboard.png)
+![Admin Panel](screenshots/admin-dashboard.png)
+
+### 🛍 Home Page
+![Home Page](screenshots/home.png)
 
 ### 🛍 Product Page
 ![Product Page](screenshots/shop.png)
+
+### 🛍 Product details Page
+![Product details Page](screenshots/product-details.png)
 
 ### 🛒 Cart Page
 ![Cart](screenshots/cart.png)
 
 ### 🛒 Checkout Page
-![Checkout](checkout.png)
+![Checkout](screenshots/checkout.png)
+
+### 🛒 Account Page
+![Account](screenshots/account.png)
 
 🔐 Default Admin Credentials
 Email: admin@demo.com  
