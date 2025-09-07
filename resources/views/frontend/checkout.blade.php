@@ -24,7 +24,112 @@
                             <div class="card shadow-lg border-0">
                                 <div class="card-body checkout-form">
                                     <div class="row">
-                                        <!-- Your form inputs here (first_name, last_name, email, country, etc.) -->
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <input type="text" name="first_name" id="first_name"
+                                                    value="{{ !empty($customerAddress) ? $customerAddress->first_name : '' }}"
+                                                    class="form-control" placeholder="First Name">
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <input type="text" name="last_name" id="last_name"
+                                                    value="{{ !empty($customerAddress) ? $customerAddress->last_name : '' }}"
+                                                    class="form-control" placeholder="Last Name">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <input type="text" name="email" id="email"
+                                                    value="{{ !empty($customerAddress) ? $customerAddress->email : '' }}"
+                                                    class="form-control" placeholder="Email">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <select name="country" id="country" class="form-control">
+
+                                                    @if (!empty($countries))
+                                                        <option value="">Select a Country</option>
+                                                        @foreach ($countries as $country)
+                                                            <option
+                                                                {{ !empty($customerAddress) && $customerAddress->country_id == $country->id ? 'selected' : '' }}
+                                                                value="{{ $country->id }}">{{ $country->name }}</option>
+                                                        @endforeach
+                                                     
+                                                    @endif
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <textarea name="address" id="address" cols="30" rows="3" placeholder="Address" class="form-control">{{ !empty($customerAddress) ? $customerAddress->address : '' }}</textarea>
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <input type="text" name="apartment" id="apartment"
+                                                    value="{{ !empty($customerAddress) ? $customerAddress->apartment : '' }}"
+                                                    class="form-control"
+                                                    placeholder="Apartment, suite, unit, etc. (optional)">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <input type="text" name="city" id="city"
+                                                    value="{{ !empty($customerAddress) ? $customerAddress->city : '' }}"
+                                                    class="form-control" placeholder="City">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <input type="text" name="state" id="state"
+                                                    value="{{ !empty($customerAddress) ? $customerAddress->state : '' }}"
+                                                    class="form-control" placeholder="State">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <input type="text" name="zip" id="zip"
+                                                    value= "{{ !empty($customerAddress) ? $customerAddress->zip : '' }}"
+                                                    class="form-control" placeholder="Zip">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <input type="text" name="mobile" id="mobile"
+                                                    value= "{{ !empty($customerAddress) ? $customerAddress->mobile : '' }} "class="form-control"
+                                                    placeholder="Mobile No.">
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <textarea name="order_notes" id="order_notes" cols="30" rows="2" placeholder="Order Notes (optional)"
+                                                    class="form-control">{{ !empty($customerAddress) ? $customerAddress->notes : '' }}</textarea>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
